@@ -1,16 +1,20 @@
 <template>
-  <div class="flex justify-center items-start bg-slate-200 w-100 min-h-screen text-gray-300 p-4 lg:items-center">
+  <div class="flex justify-center items-start bg-slate-500 w-100 min-h-screen text-gray-300 p-4 lg:items-center">
     <div class="mx-auto w-full max-w-3xl pt-5 drop-shadow-sm	bg-slate-600 rounded-md p-4">
       <div class="mb-5">
         <question :question="fQuestion" :show-answer="showAnswer"/>
       </div>
       <div class="flex justify-between">
         <button @click.prevent="onShowAnswer"
-                class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">Xem câu trả lởi
+                class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">
+            <img src="/icons/spell-check-solid.svg" alt="" width="20" height="20" class="text-white">
         </button>
-        <button @click.prevent="onPlayQuestion" class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">Nghe câu hỏi</button>
+        <button @click.prevent="onPlayQuestion" class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">
+          <img src="/icons/volume-up-solid.svg" alt="" width="20" height="20" class="text-white">
+        </button>
         <button @click.prevent="onShowNextQuestion"
-                class="py-2 px-4 mr-4 bg-emerald-700 rounded-md text-white hover:bg-emerald-600">Câu tiếp theo
+                class="py-2 px-4 mr-4 bg-emerald-700 rounded-md text-white hover:bg-emerald-600">
+          <img src="/icons/step-forward-solid.svg" alt="" width="20" height="20" class="text-white">
         </button>
       </div>
       <audio v-if="videoUrl" @ended="endAudio" :src="videoUrl" ref="videoRef" controls style="width: 0; height: 1px" autoplay type="audio/mp3"></audio>
@@ -66,7 +70,6 @@ export default defineComponent({
       showAnswer.value = true
       isQuestion.value = false
       play()
-
     }
 
     const onShowNextQuestion = () => {
