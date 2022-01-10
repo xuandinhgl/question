@@ -13,7 +13,7 @@
                 class="py-2 px-4 mr-4 bg-emerald-700 rounded-md text-white hover:bg-emerald-600">Câu tiếp theo
         </button>
       </div>
-      <audio v-if="videoUrl" :src="videoUrl" ref="videoRef" controls="controls" style="width: 0; height: 1px" autoplay type="audio/mp3"></audio>
+      <audio v-if="videoUrl" :src="videoUrl" ref="videoRef" controls style="width: 0; height: 1px" autoplay type="audio/mp3"></audio>
 
     </div>
   </div>
@@ -33,7 +33,6 @@ export default defineComponent({
   },
   setup() {
     const videoUrl = ref('');
-    const videoRef = ref(null)
 
     const getVoice = async (input: string)  => {
       if (input) {
@@ -64,7 +63,7 @@ export default defineComponent({
 
     const onShowAnswer = () => {
       showAnswer.value = true
-      play(false)
+      play(null, false)
     }
 
     const onShowNextQuestion = () => {
@@ -72,7 +71,7 @@ export default defineComponent({
       showAnswer.value = false
     }
 
-    const play = async (isQuestion= true) => {
+    const play = async (payload: MouseEvent| null, isQuestion = true) => {
       let txt = fQuestion?.value?.answer
       if (isQuestion) {
         txt = fQuestion?.value?.question
