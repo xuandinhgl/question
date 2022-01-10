@@ -84,7 +84,7 @@ export default defineComponent({
         if (url) {
           setTimeout(() => {
             videoUrl.value = url
-          }, 1200)
+          }, 3000)
         }
       }
     }
