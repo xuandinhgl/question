@@ -8,12 +8,12 @@
         <button @click.prevent="onShowAnswer"
                 class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">Xem câu trả lởi
         </button>
-        <button @click.prevent="play" class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">Nghe câu hỏi</button>
+        <button @click.prevent="onPlayQuestion" class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">Nghe câu hỏi</button>
         <button @click.prevent="onShowNextQuestion"
                 class="py-2 px-4 mr-4 bg-emerald-700 rounded-md text-white hover:bg-emerald-600">Câu tiếp theo
         </button>
       </div>
-      <audio v-if="videoUrl" :src="videoUrl" ref="videoRef" controls style="width: 0; height: 1px" autoplay type="audio/mp3"></audio>
+      <audio v-if="videoUrl" @ended="endAudio" :src="videoUrl" ref="videoRef" controls style="width: 0; height: 1px" autoplay type="audio/mp3"></audio>
 
     </div>
   </div>
@@ -33,6 +33,7 @@ export default defineComponent({
   },
   setup() {
     const videoUrl = ref('');
+    const isQuestion = ref(true);
 
     const getVoice = async (input: string)  => {
       if (input) {
@@ -45,7 +46,7 @@ export default defineComponent({
 
     const nextQuestion = (): QuestionI | null => {
       if (questions.length) {
-
+        isQuestion.value = true
         const randomIndex = Math.floor(Math.random() * questions.length)
         const question: QuestionI = questions[randomIndex]
         if (question) {
@@ -63,17 +64,34 @@ export default defineComponent({
 
     const onShowAnswer = () => {
       showAnswer.value = true
-      play(null, false)
+      isQuestion.value = false
+      play()
+
     }
 
     const onShowNextQuestion = () => {
       fQuestion.value = nextQuestion()
       showAnswer.value = false
+      videoUrl.value = ''
+      onPlayQuestion()
     }
 
-    const play = async (payload: MouseEvent| null, isQuestion = true) => {
+    const onPlayQuestion = () => {
+      isQuestion.value = true
+      play()
+    }
+
+    const play = async () => {
+      if (videoUrl.value && isQuestion.value) {
+        const tmp = videoUrl.value
+        videoUrl.value = ''
+        setTimeout(() => {
+          videoUrl.value = tmp
+        }, 100)
+        return ;
+      }
       let txt = fQuestion?.value?.answer
-      if (isQuestion) {
+      if (isQuestion.value) {
         txt = fQuestion?.value?.question
       }
 
@@ -89,13 +107,20 @@ export default defineComponent({
       }
     }
 
+    const endAudio = () => {
+      if (!isQuestion.value) {
+        videoUrl.value = ''
+      }
+    }
+
     return {
       fQuestion,
       showAnswer,
-      play,
+      onPlayQuestion,
       onShowAnswer,
       onShowNextQuestion,
-      videoUrl
+      videoUrl,
+      endAudio
     }
 
   }
