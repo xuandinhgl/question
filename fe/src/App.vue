@@ -1,6 +1,7 @@
 <template>
   <div class="flex justify-center items-start bg-slate-500 w-100 min-h-screen text-gray-300 p-4 lg:items-center">
     <div class="mx-auto w-full max-w-3xl pt-5 drop-shadow-sm	bg-slate-600 rounded-md p-4">
+      <h2 class="text-center "><span class="text-cyan-600 font-bold text-2xl">{{current}}</span><span class="text-2xl">/</span><span class="text-green-600 font-bold text-2xl">{{ total }}</span></h2>
       <div class="mb-5">
         <question :question="fQuestion" :show-answer="showAnswer"/>
       </div>
@@ -40,10 +41,13 @@ export default defineComponent({
   setup() {
     let questions = reactive([]);
     const fQuestion = ref({} as QuestionI);
+    const total = ref(0)
+    const current = ref(0)
 
     onMounted (async () => {
       questions = await client.fetch(getAllQuestions).then(res => res)
       const q = nextQuestion();
+      total.value = questions.length
       if (q) {
         fQuestion.value = q;
       }
@@ -67,6 +71,7 @@ export default defineComponent({
         const randomIndex = Math.floor(Math.random() * questions.length)
         const question: QuestionI = questions[randomIndex]
         if (question) {
+          current.value = current.value+1
           questions.splice(randomIndex, 1)
         }
 
@@ -121,7 +126,7 @@ export default defineComponent({
         if (url) {
           setTimeout(() => {
             videoUrl.value = url
-          }, 2000)
+          }, 3000)
         }
       }
     }
@@ -139,7 +144,8 @@ export default defineComponent({
       onShowAnswer,
       onShowNextQuestion,
       videoUrl,
-      endAudio
+      endAudio,
+      current, total
     }
 
   }

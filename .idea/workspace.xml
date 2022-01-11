@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fb61358-5675-4817-9e45-d804ff5aaae4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fe/src/components/Index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/queries.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fe/src/sanity.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/be/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/fe/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fe/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/fe/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fe/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/fe/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1641891975107</updated>
       <workItem from="1641891977545" duration="7094000" />
+      <workItem from="1641902399459" duration="1300000" />
     </task>
     <servers />
   </component>
