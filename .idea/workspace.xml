@@ -2,38 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fb61358-5675-4817-9e45-d804ff5aaae4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/prettier.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/spell-check-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/step-forward-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/icons/volume-up-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/icons/spell-check-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/icons/step-forward-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/icons/volume-up-solid.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Question.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constant.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/env.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shim.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/be/vercel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/be/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +37,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641891975107</updated>
-      <workItem from="1641891977545" duration="719000" />
+      <workItem from="1641891977545" duration="1281000" />
     </task>
     <servers />
   </component>
