@@ -7,7 +7,7 @@
       <div class="flex justify-between">
         <button @click.prevent="onShowAnswer"
                 class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">
-            <img src="/icons/spell-check-solid.svg" alt="" width="20" height="20" class="text-white">
+          <img src="/icons/spell-check-solid.svg" alt="" width="20" height="20" class="text-white">
         </button>
         <button @click.prevent="onPlayQuestion" class="py-2 px-4 mr-4 bg-green-700 rounded-md text-white hover:bg-green-600">
           <img src="/icons/volume-up-solid.svg" alt="" width="20" height="20" class="text-white">
@@ -24,18 +24,31 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref} from "vue";
-import {apiClient} from "./api";
+import {defineComponent, onMounted, reactive, ref} from "vue";
 
+import {apiClient} from "./api";
 import Question from './components/Question.vue'
-import {questions} from "./constant";
+
 import {QuestionI} from "./types";
+import {getAllQuestions} from "./queries";
+import {client} from "./sanity";
 
 export default defineComponent({
   components: {
     Question
   },
   setup() {
+    let questions = reactive([]);
+    const fQuestion = ref({} as QuestionI);
+
+    onMounted (async () => {
+      questions = await client.fetch(getAllQuestions).then(res => res)
+      const q = nextQuestion();
+      if (q) {
+        fQuestion.value = q;
+      }
+    });
+
     const videoUrl = ref('');
     const isQuestion = ref(true);
 
@@ -63,7 +76,7 @@ export default defineComponent({
       return null
     }
 
-    const fQuestion = ref(nextQuestion())
+
     const showAnswer = ref(false)
 
     const onShowAnswer = () => {
@@ -73,7 +86,10 @@ export default defineComponent({
     }
 
     const onShowNextQuestion = () => {
-      fQuestion.value = nextQuestion()
+      const q = nextQuestion()
+      if (q) {
+        fQuestion.value = q
+      }
       showAnswer.value = false
       videoUrl.value = ''
       onPlayQuestion()
@@ -105,7 +121,7 @@ export default defineComponent({
         if (url) {
           setTimeout(() => {
             videoUrl.value = url
-          }, 3000)
+          }, 2000)
         }
       }
     }
@@ -130,6 +146,3 @@ export default defineComponent({
 })
 
 </script>
-
-
-

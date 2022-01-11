@@ -7,10 +7,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sanity/client": "^2.23.2",
     "axios": "^0.24.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
+    "@types/node": "^17.0.8",
     "@vitejs/plugin-vue": "^2.0.0",
     "autoprefixer": "^10.4.2",
     "eslint": "^8.6.0",
