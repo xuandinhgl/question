@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5fb61358-5675-4817-9e45-d804ff5aaae4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/be/vercel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/be/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +35,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1641891975107</updated>
-      <workItem from="1641891977545" duration="1281000" />
+      <workItem from="1641891977545" duration="1989000" />
     </task>
     <servers />
   </component>
